@@ -193,6 +193,11 @@ return [
         Someline\Providers\RepositoryServiceProvider::class,
         Someline\Providers\PolymorphicRelationServiceProvider::class,
 
+        /**
+         * Third Party Providers
+         */
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
     ],
 
     /*
@@ -241,9 +246,14 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Image' => Intervention\Image\Facades\Image::class,
-        'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Countries' => Monarobase\CountryList\CountryListFacade::class,
         'GeoIP' => Torann\GeoIP\GeoIPFacade::class,
+
+        /**
+         * Third Party Facades
+         */
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
