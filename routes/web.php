@@ -25,6 +25,9 @@ Route::group(['prefix' => 'locales'], function () {
 
 // Basic Routes
 Route::get('/home', 'HomeController@index');
+Route::get('/', function () {
+    return redirect('admin/users');
+});
 
 // Image Routes
 Route::get('/image/{name}', 'ImageController@showOriginalImage');
@@ -33,9 +36,9 @@ Route::post('/image', 'ImageController@postImage');
 // Protected Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
-//    Route::get('/', function () {
-//        return redirect('users');
-//    });
+    Route::get('/', function () {
+        return redirect('admin/users');
+    });
 
     Route::get('users', 'UserController@getUserList');
     Route::get('dashboard', 'DashboardController@index');
