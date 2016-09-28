@@ -14,6 +14,7 @@ Vue.filter('nl2br', require('./filters/nl2br'));
 
 // Vue Mixins
 import MixInUser from './mixins/user'
+import Vue from "vue/src/directives/internal/index";
 import MixInJQuery from './mixins/jquery'
 import MixInTools from './mixins/tools'
 Vue.mixin(MixInUser);

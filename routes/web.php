@@ -31,13 +31,15 @@ Route::get('/image/{name}', 'ImageController@showOriginalImage');
 Route::post('/image', 'ImageController@postImage');
 
 // Protected Routes
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
-    Route::get('/', function () {
-        return redirect('users');
-    });
+//    Route::get('/', function () {
+//        return redirect('users');
+//    });
 
     Route::get('users', 'UserController@getUserList');
+    Route::get('dashboard', 'DashboardController@index');
+    Route::get('profile', 'UserController@profile')->name('admin.user.profile');
 
 });
 

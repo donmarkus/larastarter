@@ -17,4 +17,9 @@ class UserController extends BaseController
         return view('users.user_list');
     }
 
+    public function profile()
+    {
+        return view('users.profile');
+    }
+
 }
